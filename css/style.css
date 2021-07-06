@@ -1,0 +1,143 @@
+@font-face{
+    font-family: MavenPro;
+    src: url('MavenPro-Regular.ttf');
+}
+
+*{
+    font-family: MavenPro;
+    margin: 0;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+.container{
+    padding-left:100px ;
+}
+
+header{
+    height: 80px;
+    background-color: #ff7f50;
+    /* padding-left: 100px; */
+    display: flex;
+    align-items: center;  
+}
+
+#head-title{
+    /*color: #fff8dc; */
+    color: #f4f4f4;
+    font-size: 42px;
+}
+
+.main-content{
+    /* padding-left: 100px; */
+    margin-top: 9px;
+}
+
+.section-title{
+    /* #151715 */
+    font-size: 32px;
+    color: #474745;
+    margin-bottom: 5px;
+}
+
+form{
+    margin-bottom: 5px;
+}
+
+#new-item{
+    font-size: 29px;
+    padding: 8px 7px;
+    border-radius: 5px;
+    /* border-color: #f4f4f4; */
+}
+
+#submit-btn{
+    font-size: 29px;
+    background-color: #ff7f50;
+    color: #f4f4f4;
+    background-color: #ff7f50;
+    padding: 8px 7px;
+    border-radius: 5px;
+}
+
+#submit-btn:hover{
+    background-color: #f4f4f4;
+    color: #ff7f50;
+    border-radius: 5px;
+}
+
+.trash{
+        float: right;
+        background-color: #ff0000;
+        color: #ffffff;
+        padding: 0 7px;
+        border-radius: 5px;
+        font-weight: bold;
+}
+
+.trash:hover{
+    background-color: #f4f4f4;
+    color:#ff0000;
+    border:2px #ffffff solid ;
+    cursor: pointer;
+    
+}
+
+.task-item{
+    color:#474745 ;
+    font-size: 27px;
+   margin-bottom: 7px;
+}
+
+.list-task-items{
+    margin-bottom: 5px;
+    width: 70%;
+}
+
+p{
+    color: #474745;
+    font-size: 24px;
+}
+
+#count{
+    background-color: #ff7f50;
+    padding: 0 7px;
+    Color: #f4f4f4;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    border-top: 2px #ff7f50 solid;
+}
+
+footer p{
+     text-align: center;
+     color: #ff7f50;
+     margin-top: 6px;
+    font-size: 20px;
+}
+
+@media screen and (max-width:580px){
+
+    .container{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .task-item{
+        width: 95%;
+    }
+
+    .list-task-items{
+        width: 90%;
+    }
+  
+}

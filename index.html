@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"> -->
+    <link rel="shortcut icon" href="task manager.png" type="image/x-icon">
+    <title>Task Manager</title>
+</head>
+<body>
+    <header class="container">
+        <!-- <img a href="img/favicon.png" type="image/x-icon"> -->
+        <h1 id="head-title">Task Manager <span style="display: none;">123</span></h1>
+    </header>
+    <div class="main-content container"> 
+        <h2 class="section-title">Add task </h2>
+        <form>
+            <input type="text" name ="item" placeholder="Enter task" id="new-item">
+            <input type="submit" value="Submit" id="submit-btn">
+        </form>
+        <h2 class="section-title">Tasks</h2>
+        <ul class="list-task-items">
+            <!-- <li class="task-item">Read a book <span class="trash">x</span></li>
+            <li class="task-item">Review the book <span class="trash">x</span></li>
+            <li class="task-item">Recommend the book <span class="trash">x</span></li>
+            <li class="task-item">Forget the book <span class="trash">x</span></li> -->
+        </ul>
+        <p>Count  <span id="count">0</span></p>
+    </div>
+    <footer>
+        <p>Mini project 2, EldoHub &copy:2021 </p>
+    </footer>
+    <script >
+            let count_span = document.querySelector('#count');
+            count = 0;
+
+
+let form = document.querySelector('form');
+let list =document.querySelector('.list-task-items');
+let trashBtns =document.querySelectorAll('.trash');
+let task
+
+    const countItems = () => {
+        return document.querySelectorAll('.task-item').length;
+    }
+    const deleteItem = (e) => {
+
+        e.preventDefault();
+        let item = e.target.parentNode;
+        list.removeChild(item);
+        count_span.textContent = countItems();
+        
+    }
+    trashBtns.forEach(trashBtn => {trashBtn.addEventListener('click', deleteItem)})
+
+    const addItem = (e) => {
+          e.preventDefault();
+        let newItem = document.querySelector('#new-item');
+        let text = newItem.value.split('');        /**/
+        if (text.length > 0) {     
+        let li = document.createElement('li');
+        li.className = "task-item";
+        li.textContent = newItem.value;
+        let span = document.createElement('span');
+        span.className = "trash";
+        span.textContent = "X";
+        span.addEventListener('click', deleteItem);
+        li.appendChild(span);
+        list.appendChild(li);
+        count_span.textContent = countItems(); 
+          }     /**/
+        form.reset();
+        }
+    form.addEventListener('submit',addItem);
+    
+
+
+
+
+
+    //     e.preventDefault();
+    //     let newItem = document.querySelector('#new-item');
+    //     let li = document.createElement('li');
+    //     li.className = "task-item";
+    //     li.textContent = newItem.value;
+    //     let span= document.createElement('span');
+
+    //     span.className ="trash";
+    //     span.textContent = "X";
+    //     span.addEventListener('click',deleteItem)
+    //     li.appendChild(span);
+    //     list.appendChild(li);
+    // })
+
+// let submitButton =document.querySelector('#submit-btn');
+// submitButton.addEventListener('click',function(e){
+//     e.preventDefault();
+//     console.log(e.target.value);
+// });
+
+// let taskItems = document.querySelectorAll('.task-item');
+// taskItems.forEach(task_item => {
+//     task_item.addEventListener('click',function(e){
+//         e.preventDefault();
+//         console.log(e.target.textContent);
+//     })
+// });
+
+
+       
+
+
+
+
+
+
+/**
+        let listTaskItems = document.querySelector('.list-task-items');
+        let li = document.createElement('li');
+              
+        li.textContent="Buy another book";
+        li.className = "task-item";
+      
+        listTaskItems.appendChild(li);
+        console.log(li);
+        let span = document.querySelector("span");
+        span.className = "trash";
+        span.textContent = "X";
+        span.style.display = 'block';
+        li.appendChild(span);**/
+    /**
+
+        let button = document.createElement('button');
+        button.textContent='Register';
+        button.style.fontSize = '24px';
+        button.style.color = "coral";
+        console.log(button);
+        let header =document.querySelector('header')
+        let headTitle =document.querySelector('#head-title')
+        header.insertBefore(button,headTitle);
+        console.log(header);/**/
+    // /**/
+
+    //     let ul = document.createElement('ul');
+    //     let li = document.createElement('li');
+    //     for(let i=1; i<=4;i++)
+    //     {
+    //         let li = document.createElement('li');
+    //         li.className = "list-items";
+    //         li.textContent = i;
+    //         ul.appendChild(li);    
+    //     }
+
+    //     console.log(ul.childNodes);
+    //     for(let li of ul.childNodes){
+    //         if(li.textContent==='3')
+    //         {
+    //             ul.removeChild(li);
+    //         }
+    //          console.log(li.textContent);
+    //     }
+    //     let listItems = document.querySelectorAll('.list-items');
+    //     // for (let listItem of listItems) {
+    //     //     console.log(listItem.textContent);
+    //     // }
+    //     listItems.forEach(listItems=>console.log(listItems));
+        
+    //     **/
+        
+        //**id**
+        // let count = document.querySelector('#count');
+        // console.log(count);
+
+        //**class**
+        // let mainContent = document.querySelector('.main-content')
+        // console.log(mainContent);
+        // let taskItems = document.querySelectorAll(".task-item");
+        // for(let taskItem of taskItems){
+        //     console.log(taskItem.textContent)
+        // }
+        // let items = document.querySelector('.task-item');
+        // console.log(items.textContent);
+
+        // let head = document.querySelector('header');
+        // console.log(head.innerHTML);
+        // console.log(head.innerText);
+        // console.log(head.textContent);
+
+        // let button = document.querySelector("input[type='submit']");
+        // console.log(button);
+        // console.log(button.value);
+        // console.log(button.id);
+        //  button.id = 'newId';
+        // console.log(button.id);
+
+
+
+        //getelement by id
+        // let count = document.getElementById("count");
+        // console.log(count);
+
+        //getElements by class Name
+        // let titles = document.getElementsByClassName("section-title");
+        // console.log(titles);
+        
+        // for(let title of titles){
+        //     console.log(title);
+        //     console.log(title[0])
+        // }
+
+        //** getElementByTag name
+        
+        //    let lis = document.getElementsByTagName("li");
+        //    for(let i=0;i<lis.length;i++){
+        //        console.log(lis[i].textContent);
+        //    }
+        //    console.log(lis[0].parentElement);
+        //    console.log(lis[0].parentNode);
+        //    console.log(lis[0].nextSibling);
+
+         //**get elements by name
+
+        //  let item = document.getElementsByName("item");
+        //  console.log(item);
+
+    // list all elements in the document
+        // let all = document.all;//*
+        // console.log(all);
+        // console.log(all[16]);
+        // console.log(all.length);
+       
+        // let title = all[10];//*
+        // console.log(title);//*
+        // console.log(title.textContent);
+        // title.textContent = "newTitle";
+        //title.innerHTML = 'newTitle<span>heading</span>'//*
+
+        // console.log(title);
+        // console.log(title.textContent);//*
+        
+        // console.log(title.innerText);//*
+        // title.style.color = "blue";
+        // title.style.fontSize = "56px";
+        // title.style.backgroundColor = "Violet";
+
+
+    </script>
+</body>
+</html>
